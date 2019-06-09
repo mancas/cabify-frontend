@@ -10,7 +10,7 @@ import ColTotal from './cols/ColTotal'
 
 const CartRow = ({ item }) => {
   return (
-    <li class={c(styles.product, cartDetailsStyles.row)}>
+    <li className={c(styles.product, cartDetailsStyles.row)}>
       <ColProduct code={item.code} name={item.name} src={item.imageSrc} />
       <ColQuantity quantity={item.quantity} />
       <ColPrice price={item.price} />

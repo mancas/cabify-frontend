@@ -5,6 +5,7 @@ import Header from '../../../../components/header/Header'
 import Discounts from './components/discounts/Discounts'
 import Items from './components/items/Items'
 import Total from './components/total/Total'
+import SideContent from '../../../../components/sideContent/SideContent'
 
 const getTotalAmount = items =>
   items
@@ -13,7 +14,7 @@ const getTotalAmount = items =>
 
 const Summary = ({ items }) => {
   return (
-    <aside className={styles.summary}>
+    <SideContent extraClass={styles.summary}>
       <Header label={'Order Summary'} />
 
       <Items numberOfItems={items.length} amount={getTotalAmount(items)} />
@@ -21,7 +22,7 @@ const Summary = ({ items }) => {
       <Discounts />
 
       <Total amount={getTotalAmount(items)} />
-    </aside>
+    </SideContent>
   )
 }
 

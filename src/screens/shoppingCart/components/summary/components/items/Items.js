@@ -16,7 +16,7 @@ const Items = ({ amount, numberOfItems }) => {
         <span>{`${numberOfItems} Items`}</span>
         <span className={styles.itemsPrice}>
           {amount}
-          <span class={styles.currency}>€</span>
+          <span className={styles.currency}>€</span>
         </span>
       </li>
     </ul>

@@ -5,7 +5,7 @@ import summaryStyles from '../../Summary.module.css'
 
 const Discounts = ({ discounts }) => {
   return (
-    <div class={c(summaryStyles.wrapperHalf, summaryStyles.border)}>
+    <div className={c(summaryStyles.wrapperHalf, summaryStyles.border)}>
       <h2>Discounts</h2>
       <ul>
         <li>

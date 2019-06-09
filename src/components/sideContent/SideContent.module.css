@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 40px 32px;
+  width: 312px;
+  color: #212240;
+}
+
+.content > * {
+  width: 100%;
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import styles from './ColProduct.module.css'
 import cartDetailsStyles from '../../cartDetails/CartDetails.module.css'
 import shirtSrc from '../../../../../assets/shirt.png'
@@ -10,7 +11,9 @@ const ColProduct = ({ name, src, code }) => {
       <figure className={styles.productImage}>
         <img alt={name} src={shirtSrc} />
         <div className={styles.productDescription}>
-          <h1>{name}</h1>
+          <h1>
+            <Link to={`/product/${code}`}>{name}</Link>
+          </h1>
           <p className={styles.productCode}>{`Product code ${code}`}</p>
         </div>
       </figure>
