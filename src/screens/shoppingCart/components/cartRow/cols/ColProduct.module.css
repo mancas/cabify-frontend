@@ -1,0 +1,22 @@
+.productImage {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+
+.productImage img {
+  margin-right: 16px;
+  width: 72px;
+  height: 72px;
+  border: 1px solid #cacad1;
+  border-radius: 4px;
+}
+
+.productCode {
+  border-radius: 4px;
+  color: #a6a7b3;
+  letter-spacing: 0.13px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}

@@ -3,6 +3,11 @@
   flex: 1;
 }
 
+.productsList {
+  position: relative;
+  width: 100%;
+}
+
 .row {
   position: relative;
   display: flex;

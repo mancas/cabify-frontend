@@ -5,7 +5,7 @@ import c from 'classnames'
 
 const CartDetailsHeader = () => {
   return (
-    <ul className={c(styles.productsList, styles.tableHead)}>
+    <ul className={c(cartDetailsStyles.productsList, styles.tableHead)}>
       <li className={c(styles.productsListTitle, cartDetailsStyles.row)}>
         <div className={cartDetailsStyles.colProduct}>Product details</div>
         <div className={cartDetailsStyles.colQuantity}>Quantity</div>
@@ -16,4 +16,4 @@ const CartDetailsHeader = () => {
   )
 }
 
-export default CartDetailsHeader
+export default React.memo(CartDetailsHeader)
