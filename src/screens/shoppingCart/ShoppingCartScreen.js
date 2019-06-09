@@ -1,16 +1,15 @@
 import React, { Fragment } from 'react'
-import styles from './ShoppingCart.module.css'
+import styles from './ShoppingCartScreen.module.css'
+import CartDetails from './components/cartDetails/CartDetails'
+import Header from '../../components/header/Header'
 
 const ShoppingCartScreen = props => {
   return (
     <Fragment>
-      <section className={styles.products}>
-        <h1>Hello there</h1>
-        <p>sdjhsdfjsdhfkdshfjk</p>
-      </section>
+      <CartDetails />
 
       <aside className={styles.summary}>
-        <h1>Hello there</h1>
+        <Header label={'Order Summary'} />
         <p>sdjhsdfjsdhfkdshfjk</p>
       </aside>
     </Fragment>
