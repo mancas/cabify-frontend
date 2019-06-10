@@ -18,4 +18,9 @@ button.count {
   color: #7350ff;
   font-weight: bold;
   cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+
+button.count:active {
+  transform: scale(0.8);
 }
