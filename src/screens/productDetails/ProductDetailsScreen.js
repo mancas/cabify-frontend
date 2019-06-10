@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import styles from './ProductDetailsScreen.module.css'
-import shirt2x from '../../assets/tshirt@2x.jpg'
 import MainContent from '../../components/mainContent/MainContent'
 import SideContent from '../../components/sideContent/SideContent'
 import CloseButton from '../../components/closeButton/CloseButton'
@@ -14,7 +13,9 @@ import Button from '../../components/button/Button'
   3 - Using the new srcset attribute for image tags
 */
 const getBackgroundStyle = () =>
-  window.devicePixelRatio > 1.25 && { backgroundImage: `url(${shirt2x})` }
+  window.devicePixelRatio > 1.25 && {
+    backgroundImage: "url('/assets/tshirt@2x.jpg')"
+  }
 
 const ProductDetailsScreen = ({ history }) => {
   const goBack = () => history.goBack()

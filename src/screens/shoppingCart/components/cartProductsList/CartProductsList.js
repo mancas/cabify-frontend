@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './CartProductsList.module.css'
 import cartDetailsStyles from '../cartDetails/CartDetails.module.css'
 import c from 'classnames'
 import CartRow from '../cartRow/CartRow'

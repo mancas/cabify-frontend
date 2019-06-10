@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import c from 'classnames'
 import styles from './ColQuantity.module.css'
 import cartDetailsStyles from '../../cartDetails/CartDetails.module.css'
 
