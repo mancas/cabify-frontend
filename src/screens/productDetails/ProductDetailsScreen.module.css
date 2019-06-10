@@ -16,3 +16,33 @@
     background-image: url('../../assets/tshirt@2x.jpg');
   }
 }
+
+.backButton {
+  position: absolute;
+  right: 32px;
+  top: 40px;
+}
+
+.wrapper {
+  justify-content: center;
+}
+
+.productDescription {
+  font-size: 12px;
+  padding: 24px 0 48px;
+  font-weight: bold;
+  line-height: 16px;
+}
+
+.productCode {
+  border-top: 1px solid rgba(33, 34, 64, 0.16);
+  color: #a7a7b3;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+  padding: 12px 0;
+}
+
+.button {
+  margin-top: 30px;
+}

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import c from 'classnames'
 import summaryStyles from '../../Summary.module.css'
 import styles from './Total.module.css'
+import Button from '../../../../../../components/button/Button'
 
 /*
   A more flexible solution will be to replace this markup and use the Price component
@@ -17,13 +18,12 @@ const Total = ({ amount, numberOfItems }) => {
           <span className={styles.totalPrice}>{amount}€</span>
         </li>
       </ul>
-      <button
-        className={styles.button}
+      <Button
+        extraClass={styles.button}
         type="submit"
         onClick={() => alert('Ready to checkout!')}
-      >
-        Checkout
-      </button>
+        label={'Checkout'}
+      />
     </div>
   )
 }
