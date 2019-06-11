@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import styles from './Summary.module.css'
 import Header from '../../../../components/header/Header'
@@ -6,47 +7,33 @@ import Discounts from './components/discounts/Discounts'
 import Items from './components/items/Items'
 import Total from './components/total/Total'
 import SideContent from '../../../../components/sideContent/SideContent'
+import Checkout from '../../../../services/Checkout'
 
-const getTotalAmount = items =>
-  items
-    .map(item => item.quantity * item.price)
-    .reduce((prev, cur) => prev + cur, 0)
-
-const Summary = ({ items }) => {
+const Summary = ({ summary }) => {
   return (
     <SideContent extraClass={styles.summary}>
       <Header label={'Order Summary'} />
 
-      <Items numberOfItems={items.length} amount={getTotalAmount(items)} />
+      <Items numberOfItems={summary.numberOfItems} amount={summary.total} />
 
       <Discounts />
 
-      <Total amount={getTotalAmount(items)} />
+      <Total amount={summary.total} />
     </SideContent>
   )
 }
 
 Summary.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      code: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      quantity: PropTypes.number.isRequired,
-      price: PropTypes.number.isRequired,
-      imageSrc: PropTypes.string.isRequired
-    })
-  )
+  summary: PropTypes.shape({
+    numberOfItems: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired
+  })
 }
 
-Summary.defaultProps = {
-  items: [
-    {
-      code: 'X7R2OPX',
-      name: 'Shirt',
-      quantity: 3,
-      price: 20
-    }
-  ]
+const mapStateToProps = state => {
+  return {
+    summary: Checkout.getCartSummary(state)
+  }
 }
 
-export default Summary
+export default React.memo(connect(mapStateToProps)(Summary))

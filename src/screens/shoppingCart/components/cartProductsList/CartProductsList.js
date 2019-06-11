@@ -1,8 +1,10 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import cartDetailsStyles from '../cartDetails/CartDetails.module.css'
 import c from 'classnames'
 import CartRow from '../cartRow/CartRow'
+import Checkout from '../../../../services/Checkout'
 
 const CartProductsList = ({ items }) => {
   return (
@@ -26,15 +28,10 @@ CartProductsList.propTypes = {
   )
 }
 
-CartProductsList.defaultProps = {
-  items: [
-    {
-      code: 'X7R2OPX',
-      name: 'Shirt',
-      quantity: 3,
-      price: 20
-    }
-  ]
+const mapStateToProps = state => {
+  return {
+    items: Checkout.getCartItems(state)
+  }
 }
 
-export default CartProductsList
+export default connect(mapStateToProps)(CartProductsList)

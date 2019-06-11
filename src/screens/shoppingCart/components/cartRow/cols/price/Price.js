@@ -13,7 +13,7 @@ const Price = ({ price, currency }) => {
 }
 
 Price.propTypes = {
-  price: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   currency: PropTypes.string.isRequired
 }
 

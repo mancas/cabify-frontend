@@ -4,7 +4,6 @@ const initialState = {
   /* Let's suppose the available items are fetched from a server */
   SHIRT: {
     code: 'SHIRT',
-    sku: 'X7R2OPX',
     name: 'Cabify T-Shirt',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id.',
@@ -12,15 +11,13 @@ const initialState = {
   },
   MUG: {
     code: 'MUG',
-    sku: 'X2G2OPZ',
-    name: 'Cafify Coffee Mug',
+    name: 'Cabify Coffee Mug',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id.',
     price: 7.5
   },
   CAP: {
     code: 'CAP',
-    sku: 'X3W2OPY',
     name: 'Cafify Cap',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id.',

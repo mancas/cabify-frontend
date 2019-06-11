@@ -8,7 +8,7 @@ const ColProduct = ({ name, src, code }) => {
   return (
     <div className={cartDetailsStyles.colProduct}>
       <figure className={styles.productImage}>
-        <img alt={name} src={'/assets/shirt.png'} />
+        <img alt={name} src={src} />
         <div className={styles.productDescription}>
           <h1>
             <Link to={`/product/${code}`}>{name}</Link>

@@ -1,5 +1,5 @@
-const ADD_PRODUCT = 'ITEMS/ADD_PRODUCT'
-const REMOVE_PRODUCT = 'ITEMS/REMOVE_PRODUCT'
+export const ADD_PRODUCT = 'ITEMS/ADD_PRODUCT'
+export const REMOVE_PRODUCT = 'ITEMS/REMOVE_PRODUCT'
 
 const addProduct = product => {
   return {

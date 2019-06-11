@@ -12,7 +12,7 @@ const CartRow = ({ item }) => {
   return (
     <li className={c(styles.product, cartDetailsStyles.row)}>
       <ColProduct code={item.code} name={item.name} src={item.imageSrc} />
-      <ColQuantity quantity={item.quantity} />
+      <ColQuantity quantity={item.quantity} code={item.code} />
       <ColPrice price={item.price} />
       <ColTotal total={item.quantity * item.price} />
     </li>
