@@ -21,9 +21,11 @@ const initialState = {
     name: 'Cafify Cap',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id.',
-    price: 10.0
+    price: 5.0
   }
 }
+
+export const DOMAIN = 'items'
 
 const items = (prevState = initialState, action) => {
   switch (action.type) {

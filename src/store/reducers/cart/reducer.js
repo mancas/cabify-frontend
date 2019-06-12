@@ -1,14 +1,25 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from './actions'
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  SET_DISCOUNTS,
+  SET_CART_ITEMS
+} from './actions'
 
 const initialState = {
   /* Let's suppose the available items are fetched from a server */
   items: {
-    CAP: 2,
-    MUG: 3,
-    SHIRT: 1
+    CAP: 0,
+    MUG: 0,
+    SHIRT: 0
   },
-  discounts: {}
+  discounts: {
+    CAP: {},
+    MUG: {},
+    SHIRT: {}
+  }
 }
+
+export const DOMAIN = 'cart'
 
 const cart = (prevState = initialState, action) => {
   switch (action.type) {
@@ -39,6 +50,20 @@ const cart = (prevState = initialState, action) => {
         }
       }
     }
+
+    case SET_DISCOUNTS:
+      return {
+        ...prevState,
+        discounts: action.payload.discounts
+      }
+
+    case SET_CART_ITEMS:
+      return {
+        ...prevState,
+        items: {
+          ...action.payload.cart
+        }
+      }
 
     default:
       return prevState

@@ -1,25 +1,28 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import summaryStyles from '../../Summary.module.css'
+import Checkout from '../../../../../../services/Checkout'
 
 const Discounts = ({ discounts }) => {
   return (
     <div className={c(summaryStyles.wrapperHalf, summaryStyles.border)}>
       <h2>Discounts</h2>
       <ul>
-        <li>
-          <span>2x1 Mug offer</span>
-          <span>-10€</span>
-        </li>
-        <li>
-          <span>x3 Shirt offer</span>
-          <span>-3€</span>
-        </li>
-        <li>
-          <span>Promo code</span>
-          <span>0€</span>
-        </li>
+        {discounts.map((discount, idx) => {
+          return (
+            <li key={idx}>
+              <span>{discount.promoName}</span>
+              <span>{`-${discount.discount}€`}</span>
+            </li>
+          )
+        })}
+        {!discounts.length && (
+          <li>
+            <span>No discounts can be applied</span>
+          </li>
+        )}
       </ul>
     </div>
   )
@@ -28,13 +31,16 @@ const Discounts = ({ discounts }) => {
 Discounts.propTypes = {
   discounts: PropTypes.arrayOf(
     PropTypes.shape({
-      code: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      quantity: PropTypes.number.isRequired,
-      price: PropTypes.number.isRequired,
-      imageSrc: PropTypes.string.isRequired
+      discount: PropTypes.number.isRequired,
+      promoName: PropTypes.string.isRequired
     })
   )
 }
 
-export default Discounts
+const mapStateToProps = state => {
+  return {
+    discounts: Checkout.getDiscountsApplied(state)
+  }
+}
+
+export default React.memo(connect(mapStateToProps)(Discounts))

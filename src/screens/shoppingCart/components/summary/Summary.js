@@ -9,7 +9,7 @@ import Total from './components/total/Total'
 import SideContent from '../../../../components/sideContent/SideContent'
 import Checkout from '../../../../services/Checkout'
 
-const Summary = ({ summary }) => {
+const Summary = ({ summary, totalCheckout }) => {
   return (
     <SideContent extraClass={styles.summary}>
       <Header label={'Order Summary'} />
@@ -18,7 +18,7 @@ const Summary = ({ summary }) => {
 
       <Discounts />
 
-      <Total amount={summary.total} />
+      <Total amount={totalCheckout} />
     </SideContent>
   )
 }
@@ -32,7 +32,8 @@ Summary.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    summary: Checkout.getCartSummary(state)
+    summary: Checkout.getCartSummary(state),
+    totalCheckout: Checkout.total()
   }
 }
 
