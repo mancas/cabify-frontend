@@ -21,6 +21,10 @@ const getBackgroundStyle = () =>
 
 const ProductDetailsScreen = ({ history, item }) => {
   const goBack = () => history.goBack()
+  const add = () => {
+    Checkout.scan(item.code)
+    goBack()
+  }
   return (
     <Fragment>
       <MainContent>
@@ -38,7 +42,7 @@ const ProductDetailsScreen = ({ history, item }) => {
 
         <Button
           label={'Add to cart'}
-          onClick={() => alert('Added!')}
+          onClick={add}
           extraClass={styles.button}
         />
       </SideContent>
