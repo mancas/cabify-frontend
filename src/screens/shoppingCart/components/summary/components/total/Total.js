@@ -21,7 +21,7 @@ const Total = ({ amount, numberOfItems }) => {
       <Button
         extraClass={styles.button}
         type="submit"
-        onClick={() => alert('Ready to checkout!')}
+        onClick={() => alert(`Ready to checkout! You must pay ${amount}€`)}
         label={'Checkout'}
       />
     </div>
