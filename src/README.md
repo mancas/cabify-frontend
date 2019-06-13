@@ -6,7 +6,9 @@ As you can see this is the compiled code, ready to be deployed on production. To
 
 I suggest to visit my [playground](https://playground.aloy.ovh/) where this code is deployed using Docker, so you can test the features required.
 
-But if you want to test it on your own, I will recommend you to install a local nginx that points to this folder. Or if you're looking for a more simple way of testing, please open the _index.html_ on Chrome.
+But if you want to test it on your own, I will recommend you to install a local nginx that points to this folder. Or if you prefer to avoid installing things, please clone my repo locally and execute **yarn** and once the command finished, execute **yarn start** to start a local server at port 3000.
+
+And don't forget that you can visit the product page by clicking on the product name.
 
 ## Technologies
 
