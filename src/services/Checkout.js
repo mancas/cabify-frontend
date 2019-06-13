@@ -94,6 +94,10 @@ const demoPricingRules = {
 class Checkout {
   _pricingRules
 
+  /*
+    Despite we make an instance of Checkout class with the pricingRules, let's assume that
+    those rules comes from the server
+  */
   constructor(pricingRules) {
     if (!pricingRules) {
       throw new Error('No pricing rules specified')
@@ -101,6 +105,7 @@ class Checkout {
     this._pricingRules = pricingRules
   }
 
+  /* To make a more real test, let's recover the cart from a previous session like Amazon does */
   restoreCartIfNeeded = () => {
     try {
       const cartStored = JSON.parse(sessionStorage.getItem(CART_DOMAIN))
@@ -177,6 +182,7 @@ class Checkout {
       )
   }
 
+  /* Compute the total discount applied to the specified product depending on how many items are in the cart */
   getDiscountsByProduct = (product, productQuantity) => {
     let discounts = []
     const productCode = product.code
