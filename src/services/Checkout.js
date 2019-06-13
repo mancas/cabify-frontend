@@ -104,6 +104,9 @@ class Checkout {
   restoreCartIfNeeded = () => {
     try {
       const cartStored = JSON.parse(sessionStorage.getItem(CART_DOMAIN))
+      if (!cartStored) {
+        return
+      }
       store.dispatch(setCart(cartStored))
     } catch (error) {
       console.info(`Cart stored in sessionStorage is corrupted`, error)
